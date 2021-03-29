@@ -21,7 +21,7 @@
 /* Port */
 
 #define aread(_) analogRead(_)
-#define dread(_) digitalRead(_)
+#define dread(port) digitalRead(port)
 #define sprintln(_) Serial.println(_)
 
 int port_motor_left = 10;
@@ -29,7 +29,7 @@ int port_motor_left_speed = 5;
 int port_motor_right = 11;
 int port_motor_right_speed = 6;
 int r_sensor_view = 5;
-int l_sensor_view = 4;
+int l_sensor_view = 9; // digitalRead -> 1 / 0 
 int value = -1;
 int speed = 150;
 
@@ -38,12 +38,18 @@ void setup()
     Serial.begin(9600);
 }
 
-void loop()
-{
-    forward();
 
-    sprintln(get_value_of_line_sensor(l_sensor_view));
-    sprintln(get_value_of_line_sensor(r_sensor_view));
+void loop()
+{  
+    //forward();
+
+    Serial.println("Port D13 Digital : " + String(dread(r_sensor_view)));
+    if dread(l_sensor_view) {
+        Serial.print("TRUE");
+    } else {
+        Serial.print("TRUE");
+    }
+    Serial.println("");
 }
 
 void forward()
