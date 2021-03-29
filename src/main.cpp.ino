@@ -21,7 +21,7 @@
 /* Port */
 
 #define aread(_) analogRead(_)
-#define dread(port) digitalRead(port)
+#define dread(_) digitalRead(_)
 #define sprintln(_) Serial.println(_)
 
 int port_motor_left = 10;
