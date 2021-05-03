@@ -48,15 +48,7 @@ void setup()
 
 void loop()
 {  
-    //forward();
-
-    Serial.println("Port D13 Digital : " + String(dread(r_sensor_view)));
-    if dread(l_sensor_view) {
-        Serial.print("TRUE");
-    } else {
-        Serial.print("TRUE");
-    }
-    Serial.println("");
+    forward();
 }
 
 void forward()
