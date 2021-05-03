@@ -24,14 +24,14 @@
 #define dread(_) digitalRead(_)
 #define sprintln(_) Serial.println(_)
 
-int port_motor_left = 10;
-int port_motor_left_speed = 5;
-int port_motor_right = 11;
-int port_motor_right_speed = 6;
-int r_sensor_view = 5;
-int l_sensor_view = 9; // digitalRead -> 1 / 0 
-int value = -1;
-int speed = 150;
+#define board_led  13
+#define port_motor_left 10
+#define port_motor_left_speed 5
+#define port_motor_right 11
+#define port_motor_right_speed 6
+#define r_sensor_view 5
+#define l_sensor_view 9 // digitalRead -> 1 / 0 
+#define speed 300
 
 void setup()
 {
