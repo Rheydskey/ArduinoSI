@@ -41,6 +41,8 @@ void setup()
     pinMode(port_motor_right_speed, OUTPUT);           
     pinMode(board_led, OUTPUT);           
     Serial.begin(9600);
+    
+    doBlink(10, 100);
 }
 
 
@@ -91,4 +93,13 @@ void get_value_of_view_sensor(byte pdata[2]) {
 
 int get_value_of_line_sensor(int port) {
     return dread(port);
+}
+
+void doBlink(int times, int delayTime){
+  for(int i=0; i<times; i++){
+    digitalWrite(board_led, HIGH);   // turn the LED on (HIGH is the voltage level)
+    delay(delayTime);              // wait for a second
+    digitalWrite(board_led, LOW);    // turn the LED off by making the voltage LOW
+    delay(delayTime);              // wait for a second    
+  }
 }
