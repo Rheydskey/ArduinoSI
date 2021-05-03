@@ -95,6 +95,15 @@ int get_value_of_line_sensor(int port) {
     return dread(port);
 }
 
+bool is_black(int port) {
+     if (!dread(port)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 void doBlink(int times, int delayTime){
   for(int i=0; i<times; i++){
     digitalWrite(board_led, HIGH);   // turn the LED on (HIGH is the voltage level)
