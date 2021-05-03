@@ -35,6 +35,11 @@
 
 void setup()
 {
+    pinMode(port_motor_left, OUTPUT);
+    pinMode(port_motor_right, OUTPUT);
+    pinMode(port_motor_left_speed, OUTPUT);
+    pinMode(port_motor_right_speed, OUTPUT);           
+    pinMode(board_led, OUTPUT);           
     Serial.begin(9600);
 }
 
